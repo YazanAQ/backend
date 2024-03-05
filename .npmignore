@@ -1,0 +1,10 @@
+# Exclude all files by default
+*
+
+# Include distribution bundle but exclude test and mock files that may be included in dist
+!dist/**
+
+# Include documentation and version information in bundle
+!CONTRIBUTING.md
+
+# Include any additional source files which should be bundled

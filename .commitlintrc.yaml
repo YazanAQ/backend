@@ -1,0 +1,24 @@
+extends:
+  - "@commitlint/config-angular"
+  - "@commitlint/config-conventional"
+
+rules:
+  scope-enum:
+    - 2
+    - always
+    - - icons # icons library
+      - rds # react design system
+      - repo # general repo work
+      - release # ONLY for semantic-release
+  type-enum:
+    - 2
+    - always
+    - - build # affect the build system or external dependencies
+      - ci # CI configuration files and scripts
+      - docs # documentation only
+      - feat # new feature
+      - fix # bug fix
+      - perf # improves performance
+      - refactor # neither fixes a bug nor adds a feature
+      - style # do not affect the meaning of the code, e.g. formatting
+      - test # add/update/remove tests
