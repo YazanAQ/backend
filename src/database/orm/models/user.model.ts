@@ -85,6 +85,13 @@ export class User extends Model<User> {
   public password: string;
 
   @Column({
+    allowNull: false,
+    comment: "id for each device logged in to app",
+    type: DataTypes.STRING,
+  })
+  public deviceId: string;
+
+  @Column({
     allowNull: true,
     comment:
       "social media data when the user registered using social media (google)",

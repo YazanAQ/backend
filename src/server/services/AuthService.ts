@@ -238,9 +238,13 @@ export class AuthService implements AuthServiceInterface {
         );
       }
 
+      // Include the deviceId field in the user object
       await this.geoGeniusOrm?.models.User.create(
         await buildRegisterUser({
-          user: { ...user, password: await hashPassword(user.password!) },
+          user: {
+            ...user,
+            password: await hashPassword(user.password!),
+          },
         }),
         {
           transaction,

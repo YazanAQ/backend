@@ -26,7 +26,7 @@ import { IOrmOptions } from "../orm";
           min: 0,
         },
     port: getIntEnv("DB_PORT"),
-    schema: getEnv("GEO_DB_NAME"),
+    schema: getEnv("DB_NAME"),
     searchPath: getEnv("DB_NAME"),
     username: getEnv("DB_USER"),
   };

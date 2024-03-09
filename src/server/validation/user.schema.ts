@@ -41,6 +41,7 @@ export const userSchema = Joi.object({
     sub: Joi.string().required(),
   }).required(),
   user: Joi.object({
+    deviceId: Joi.string().required(),
     email: Joi.string().email().required(),
     id: Joi.string().required(),
     image: Joi.string().required(),
@@ -52,6 +53,7 @@ export const userSchema = Joi.object({
  * Joi schema for validating the structure of user registration data.
  */
 export const userRegisterSchema = Joi.object({
+  deviceId: Joi.string().required(),
   email: Joi.string().email().required(),
   name: Joi.string().required(),
   password: Joi.string().min(8).required(),

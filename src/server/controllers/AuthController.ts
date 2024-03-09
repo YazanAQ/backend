@@ -78,9 +78,10 @@ class AuthController {
    */
   @HandleErrors
   public async register(req: ReqWithUserSchemaI, res: Response): Promise<any> {
-    const { email, name, password } = req.body;
+    const { deviceId, email, name, password } = req.body;
+    console.log(`--> ${email} ${name} ${password} ${deviceId}`);
 
-    const user = { email, name, password };
+    const user = { deviceId, email, name, password };
 
     validateRegisterUserOrThrowError({ user });
 

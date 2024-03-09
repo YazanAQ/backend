@@ -7,7 +7,7 @@ interface GoogleAuthCallbackArgsI {
 }
 
 interface RegisterArgsI {
-  user: Partial<User & { name: string }>;
+  user: Partial<User & { name: string; deviceId: string }>;
 }
 
 interface LoginArgsI {

@@ -179,11 +179,14 @@ const comparePassword = async (
 /**
  * Builds a register user  using the provided register args data.
  * @param {RegisterArgsI} registerArgsI - The register args data.
- * @returns {Partial<User & { name: string }>} - The constructed user object.
+ * @returns {Partial<User & { name: string, deviceId:string }>} - The constructed user object.
  */
 const buildRegisterUser = async ({
-  user: { email, name, password } = {},
-}: Partial<RegisterArgsI>): Promise<Partial<User & { name: string }>> => ({
+  user: { deviceId, email, name, password } = {},
+}: Partial<RegisterArgsI>): Promise<
+  Partial<User & { name: string; deviceId: string }>
+> => ({
+  deviceId,
   email,
   id: uuid(),
   name,

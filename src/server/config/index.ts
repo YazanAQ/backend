@@ -25,7 +25,7 @@ const config: ConfigI = {
       min: 0,
     },
     port: parseInt(process.env.DB_PORT || "5432", 10),
-    schema: process.env.GEO_DB_NAME || "",
+    schema: process.env.DB_NAME || "",
     username: process.env.DB_USERNAME || "",
   },
   production: {
@@ -40,7 +40,7 @@ const config: ConfigI = {
       min: 0,
     },
     port: parseInt(process.env.DB_PORT || "5432", 10),
-    schema: process.env.GEO_DB_NAME || "",
+    schema: process.env.DB_NAME || "",
     username: process.env.DB_USERNAME || "",
   },
 };

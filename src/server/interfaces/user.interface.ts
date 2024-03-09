@@ -38,5 +38,6 @@ export interface SOCIAL_MEDIA_I {
     id: string;
     image: string;
     name: string;
+    deviceId: string;
   };
 }
