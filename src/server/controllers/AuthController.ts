@@ -6,7 +6,7 @@ import { returnError } from "../helpers/errorHandler";
 import { BadRequestError, UnauthorizedError } from "../helpers/Errors";
 import {
   buildUserObject,
-  checkTokenExpirationOrThrowError,
+  // checkTokenExpirationOrThrowError,
   validateLoginUserOrThrowError,
   validateRegisterUserOrThrowError,
   validateUserOrThrowError,
@@ -56,7 +56,7 @@ class AuthController {
 
     validateUserOrThrowError(socialMedia);
 
-    checkTokenExpirationOrThrowError(socialMedia);
+    // checkTokenExpirationOrThrowError(socialMedia);
 
     const user = buildUserObject(socialMedia);
 
@@ -79,7 +79,6 @@ class AuthController {
   @HandleErrors
   public async register(req: ReqWithUserSchemaI, res: Response): Promise<any> {
     const { deviceId, email, name, password } = req.body;
-    console.log(`--> ${email} ${name} ${password} ${deviceId}`);
 
     const user = { deviceId, email, name, password };
 

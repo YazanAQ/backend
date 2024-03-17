@@ -1,4 +1,6 @@
 import oAuthRoutes from "./auth.route";
+import friendRoutes from "./friend.route";
+import placeRoutes from "./place.route";
 import { Express } from "express";
 
 import { BASE_URL } from "../constants";
@@ -30,6 +32,8 @@ const routes: RouteRegistrarI = {
     try {
       const path = `${process.env?.BASE_URL ?? BASE_URL}`;
       app.use(path, oAuthRoutes);
+      app.use(path, friendRoutes);
+      app.use(path, placeRoutes);
     } catch (error: any) {
       console.error("Error during route registration:", error);
       throw new InternalServerError(error);

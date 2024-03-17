@@ -1,4 +1,12 @@
 export const USERS_TABLE_NAME = "users";
+export const USER_FRIENDS_TABLE_NAME = "user_friends";
+export const PLACE_TABLE_NAME = "places";
+export const SHARE_PLACES_TABLE_NAME = "share_places";
+export enum FRIEND_STATUS {
+  aborted = "aborted",
+  accepted = "accepted",
+  pending = "pending",
+}
 
 export const USER_DATA_TEST = {
   account: {

@@ -1,0 +1,260 @@
+{
+  "info": {
+    "_postman_id": "f0f4c34f-5bc1-47dd-959c-fba0718dd009",
+    "name": "Mohammad",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "1633351",
+    "_collection_link": "https://datazone.postman.co/workspace/Astros~319d1203-3e07-4b23-a8de-69c35ff223b6/collection/1633351-f0f4c34f-5bc1-47dd-959c-fba0718dd009?action=share&source=collection_link&creator=1633351"
+  },
+  "item": [
+    {
+      "name": "register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"maltobasi@hotmail.com\",\n    \"password\": \"12345678\",\n    \"name\": \"Sawubona Studios\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/v1/auth/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "auth", "register"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "googleAuthCallback",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"socialMedia\": {\n        \"token\": {\n            \"name\": \"yazan \",\n            \"email\": \"yazan@astros.one\",\n            \"picture\": \"https://lh3.googleusercontent.com/a/ACg8ocIkKb8U2pzIqS2800jg7BruhyLJ_2RqPvgLYrnyY3lrqA=s96-c\",\n            \"sub\": \"105076199355764739786\"\n        },\n        \"user\": {\n            \"id\": \"105076199355764739786\",\n            \"name\": \"yazan \",\n            \"email\": \"yazan@astros.one\",\n            \"image\": \"https://lh3.googleusercontent.com/a/ACg8ocIkKb8U2pzIqS2800jg7BruhyLJ_2RqPvgLYrnyY3lrqA=s96-c\"\n        },\n        \"account\": {\n            \"provider\": \"google\",\n            \"type\": \"oauth\",\n            \"providerAccountId\": \"105076199355764739786\",\n            \"access_token\": \"ya29.a0AfB_byCy34EV6Be7_mdoQrmRMmqcIyg_6P6pVTQckJU4LSaMIjYz_2IZqKB8eQ45VUMJS7JTsGghFKT1on_j_XTPdY7rz6bGXi6XbDTP7oHWsfFNM0cWe-qGmoAG76USq7UXX3PR77bId2_POvP1GL9qzwg8pH-wWen1aCgYKAVoSARMSFQHGX2Mi5CO-QOQ3WeoERwOkIGyBGA0171\",\n            \"expires_at\": 1709183773254,\n            \"refresh_token\": \"1//09AkWJTnySo4yCgYIARAAGAkSNwF-L9IrC8utfa9yKk1nkdab3EEu63kzPTXZmqKLQo5gWblGOPQeQmsxSX4_KiCOQgiLUmCs5SU\",\n            \"scope\": \"openid https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile\",\n            \"token_type\": \"Bearer\",\n            \"id_token\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6ImVkODA2ZjE4NDJiNTg4MDU0YjE4YjY2OWRkMWEwOWE0ZjM2N2FmYzQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDQ5NjkwNTg5ODE3LXNrNGoxOG4waThnNHBic2h0MmNycG9rN3U5cmwza2Q4LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA0OTY5MDU4OTgxNy1zazRqMThuMGk4ZzRwYnNodDJjcnBvazd1OXJsM2tkOC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwNTA3NjE5OTM1NTc2NDczOTc4NiIsImhkIjoiYXN0cm9zLm9uZSIsImVtYWlsIjoibW9oYW1tZWRAYXN0cm9zLm9uZSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoidzB4MDF6anNYdkVWamdlcUZUNElqZyIsIm5hbWUiOiJNb2hhbW1lZCBNYXNhJ2lkIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0lrS2I4VTJweklxUzI4MDBqZzdCcnVoeUxKXzJScVB2Z0xZcm55WTNscnFBPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6Ik1vaGFtbWVkIiwiZmFtaWx5X25hbWUiOiJNYXNhJ2lkIiwibG9jYWxlIjoiZW4tR0IiLCJpYXQiOjE3MDgxODMzMjQsImV4cCI6MTcwODE4NjkyNH0.WMSWckdTF2QUwjMm1uxJcuwGOdyG1aZ5-VdGznXnt8panbFOgUe756khMsDMspICpvBBz7CFQ7C0W4tNHPWWz2_feDMA-St430kWvrQU2fmBnjVyvsYWr0tFyHnH0rI9gOOtKxt3uVT3utb2ShtNWgfsCjLP7BafXhjDJhDB_OEOjFbB1V3Bj2AMIczmwBzPOtVOvIbOBPRecrD_rl2QxPT0oND1v2LpZXpZJxmo6Kvne_h_9LnxIY4amcxKE27xwOjFd-Vq0JwIN1XsjMkiaGRWYY7ZpMSM3woDnVWU3o0QxjWFDJzUUyO8jTV0MmbLukqCrNjLk6UliQLXPRknVg\"\n        },\n        \"profile\": {\n            \"iss\": \"https://accounts.google.com\",\n            \"azp\": \"1049690589817-sk4j18n0i8g4pbsht2crpok7u9rl3kd8.apps.googleusercontent.com\",\n            \"aud\": \"1049690589817-sk4j18n0i8g4pbsht2crpok7u9rl3kd8.apps.googleusercontent.com\",\n            \"sub\": \"105076199355764739786\",\n            \"hd\": \"astros.one\",\n            \"email\": \"yazan@astros.one\",\n            \"email_verified\": true,\n            \"at_hash\": \"w0x01zjsXvEVjgeqFT4Ijg\",\n            \"name\": \"yazan \",\n            \"picture\": \"https://lh3.googleusercontent.com/a/ACg8ocIkKb8U2pzIqS2800jg7BruhyLJ_2RqPvgLYrnyY3lrqA=s96-c\",\n            \"given_name\": \"yazan\",\n            \"family_name\": \"yazan\",\n            \"locale\": \"en-GB\",\n            \"iat\": 1708183324,\n            \"exp\": 1708186924\n        }\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/v1/auth/googleAuthCallback",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "auth", "googleAuthCallback"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "addFriend",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"friendId\":\"cc1e27b5-2113-4274-beb6-dc1725d13483\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/v1/friend/addFriend",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "friend", "addFriend"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"maltobasi@hotmail.com\",\n    \"password\": \"12345678\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/v1/auth/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "auth", "login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "removeFriend",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"friendId\":\"950700f1-5f61-4baf-82ac-367ae6d5396e\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/v1/friend/removeFriend",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "friend", "removeFriend"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/v1/friend/search?name=Sawubona",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "friend", "search"],
+          "query": [
+            {
+              "key": "name",
+              "value": "Sawubona"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "addPlace",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"address\": \"amman\",\n    \"description\": \"place 3 des\",\n    \"latitude\": 2.6227365,\n    \"longitude\": 49.32343,\n    \"name\": \"place 3 name\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/v1/place/addPlace",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "place", "addPlace"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "removePlace",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n            \"id\": \"4c64a015-9b70-463d-a40e-cf4a1af8387e\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/v1/place/removePlace",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "place", "removePlace"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sharePlace",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"friendIds\":[\"950700f1-5f61-4baf-82ac-367ae6d5396e\"],\n    \"placeId\": \"1b3d11d6-5c7b-40df-9ddd-7d9ef235c117\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/v1/place/sharePlace",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "place", "sharePlace"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "fetch place",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/v1/place",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "place"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "friend?status=accepted",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/v1/friend?status=pending",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "v1", "friend"],
+          "query": [
+            {
+              "key": "status",
+              "value": "pending"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

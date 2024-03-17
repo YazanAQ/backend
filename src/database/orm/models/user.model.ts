@@ -1,8 +1,11 @@
+import { SharedPlaces } from "./sharePlaces.model";
+import { UserFriends } from "./userFriends.model";
 import { CreationOptional, DataTypes } from "sequelize";
 import {
   Column,
   CreatedAt,
   DeletedAt,
+  HasMany,
   IsEmail,
   Model,
   PrimaryKey,
@@ -109,6 +112,12 @@ export class User extends Model<User> {
     type: DataTypes.DATE,
   })
   public updatedAt: Date;
+
+  @HasMany(() => UserFriends)
+  friends: User[];
+
+  @HasMany(() => SharedPlaces)
+  sharedPlaces: SharedPlaces[];
 }
 
 export default User;

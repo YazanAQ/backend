@@ -96,6 +96,40 @@ export class AuthService implements AuthServiceInterface {
       attributes: {
         exclude: isExcludePassowrd ? ["password"] : [],
       },
+      include: [
+        {
+          include: [
+            {
+              as: "friend",
+              attributes: {
+                exclude: ["password", "socialMedia", "deletedAt", "isActive"],
+              },
+              model: User,
+              required: false,
+              where: { isActive: true },
+            },
+          ],
+          model: this.geoGeniusOrm?.sequelize.models.UserFriends,
+        },
+        {
+          as: "sharedPlaces",
+          include: [
+            {
+              as: "place",
+              model: this.geoGeniusOrm?.sequelize.models.Place,
+            },
+            {
+              as: "user",
+              attributes: {
+                exclude: ["password", "socialMedia", "deletedAt", "isActive"],
+              },
+              model: this.geoGeniusOrm?.sequelize.models.User,
+            },
+          ],
+          model: this.geoGeniusOrm?.sequelize.models.SharedPlaces,
+          required: false,
+        },
+      ],
       paranoid: isParanoid,
       transaction,
       where: {
@@ -115,6 +149,40 @@ export class AuthService implements AuthServiceInterface {
     transaction?: Transaction
   ): Promise<User> {
     return (await this.geoGeniusOrm?.sequelize.models.User.findOne({
+      include: [
+        {
+          include: [
+            {
+              as: "friend",
+              attributes: {
+                exclude: ["password", "socialMedia", "deletedAt", "isActive"],
+              },
+              model: User,
+              required: false,
+              where: { isActive: true },
+            },
+          ],
+          model: this.geoGeniusOrm?.sequelize.models.UserFriends,
+        },
+        {
+          as: "sharedPlaces",
+          include: [
+            {
+              as: "place",
+              model: this.geoGeniusOrm?.sequelize.models.Place,
+            },
+            {
+              as: "user",
+              attributes: {
+                exclude: ["password", "socialMedia", "deletedAt", "isActive"],
+              },
+              model: this.geoGeniusOrm?.sequelize.models.User,
+            },
+          ],
+          model: this.geoGeniusOrm?.sequelize.models.SharedPlaces,
+          required: false,
+        },
+      ],
       transaction,
       where: { email },
     })) as User;
@@ -238,13 +306,9 @@ export class AuthService implements AuthServiceInterface {
         );
       }
 
-      // Include the deviceId field in the user object
       await this.geoGeniusOrm?.models.User.create(
         await buildRegisterUser({
-          user: {
-            ...user,
-            password: await hashPassword(user.password!),
-          },
+          user: { ...user, password: await hashPassword(user.password!) },
         }),
         {
           transaction,

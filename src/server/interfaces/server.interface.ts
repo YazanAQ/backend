@@ -1,4 +1,6 @@
 import { AuthServiceInterface } from "./auth.interface";
+import { FriendServiceInterface } from "./friend.interface";
+import { PlaceServiceInterface } from "./place.interface";
 import { Request } from "express";
 
 import { GeoGeniusOrm } from "../../database";
@@ -62,16 +64,6 @@ export interface ReqWithSharedContextI extends Request {
 }
 
 /**
- * Represents an OAuth client in the application.
- */
-export interface OAuthClientI {
-  clientId: string;
-  clientSecret: string;
-  id: string;
-  name: string;
-}
-
-/**
  * Represents an authorized request in the application.
  */
 export type AuthorizedRequest = Request & {
@@ -82,6 +74,8 @@ export type AuthorizedRequest = Request & {
 
 export interface ServicesI {
   authService: AuthServiceInterface;
+  friendService: FriendServiceInterface;
+  placeService: PlaceServiceInterface;
 }
 
 export interface GenericApiResponse<T> {
@@ -94,7 +88,6 @@ export interface GenericApiResponse<T> {
  * Represents a request with user schema information in the application.
  */
 export interface ReqWithUserSchemaI extends Request {
-  userSchema?: GeoGeniusOrm;
   params: {
     [key: string]: string;
   };

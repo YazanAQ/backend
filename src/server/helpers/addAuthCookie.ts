@@ -26,10 +26,6 @@ export const addAuthCookie = (
     secure: apiUrl.includes("localhost") ? true : isProduction,
   };
 
-  console.log({
-    cookieOptions,
-  });
-
   res.cookie(AUTH_COOKIES.accessToken, token, cookieOptions as any);
 
   if (refreshToken) {
