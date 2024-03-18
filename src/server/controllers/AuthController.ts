@@ -10,6 +10,7 @@ import {
   validateLoginUserOrThrowError,
   validateRegisterUserOrThrowError,
   validateUserOrThrowError,
+  // validateUserOrThrowError,
 } from "../helpers/googleAuthCallbackHelpers";
 import { handleGenericSuccessResponse } from "../helpers/successHandler";
 import {

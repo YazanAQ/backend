@@ -214,6 +214,7 @@ export class AuthService implements AuthServiceInterface {
 
         await this.geoGeniusOrm?.models.User.update(
           {
+            deviceId: user.deviceId,
             socialMedia: user.socialMedia,
             updatedAt: new Date(),
           },

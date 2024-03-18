@@ -98,6 +98,7 @@ const checkTokenExpirationOrThrowError = (
  * @returns {Partial<User>} - The constructed user object.
  */
 const buildUserObject = (socialMedia: SOCIAL_MEDIA_I): Partial<User> => ({
+  deviceId: socialMedia.user.deviceId,
   email: socialMedia.profile.email,
   id: uuid(),
   imageUrl: socialMedia.user.image,
